@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://fhw12tltn8i0"]
+
+[ext_resource type="Texture2D" uid="uid://bhs7fnjt0p4vc" path="res://assets/Textures/element_grey_square_glossy.png" id="1_eebsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwrkx"]
+size = Vector2(1024, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m474q"]
+size = Vector2(32, 1024)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djbl8"]
+size = Vector2(32, 1024)
+
+[node name="Walls" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+position = Vector2(512, 16)
+
+[node name="TextureRect" type="TextureRect" parent="TopWall"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -16.0
+offset_right = 512.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eebsl")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+shape = SubResource("RectangleShape2D_wwrkx")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(16, 512)
+
+[node name="TextureRect" type="TextureRect" parent="LeftWall"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -512.0
+offset_right = 16.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eebsl")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("RectangleShape2D_m474q")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1008, 512)
+
+[node name="TextureRect" type="TextureRect" parent="RightWall"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -512.0
+offset_right = 16.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eebsl")
+stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("RectangleShape2D_djbl8")
