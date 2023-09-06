@@ -3,3 +3,5 @@ res://scenes/level_1.tscn
 res://scenes/player.tscn
 res://scenes/ball.tscn
 res://scripts/ball.gd
+res://scenes/level_1.gd
+res://scripts/player.gd

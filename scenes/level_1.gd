@@ -4,6 +4,7 @@ extends Node2D
 @onready var ball = $Ball
 
 var is_start = false
+var default_ball_motion = Vector2(10, -40)
 
 func _ready():
 	is_start = false
@@ -14,4 +15,4 @@ func _process(delta):
 		ball.global_position.x = player.global_position.x
 		if Input.is_action_just_pressed("fire"):
 			is_start = true
-			print("starting")
+			ball.set_motion(default_ball_motion)
