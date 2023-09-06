@@ -1,7 +1,5 @@
-res://scenes/level_1.tscn
 res://scenes/walls.tscn
+res://scenes/level_1.tscn
 res://scenes/player.tscn
 res://scenes/ball.tscn
-res://scripts/player.gd
-res://scenes/level_1.gd
 res://scripts/ball.gd
