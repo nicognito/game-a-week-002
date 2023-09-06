@@ -4,7 +4,7 @@ extends Node2D
 @onready var ball = $Ball
 
 var is_start = false
-var default_ball_motion = Vector2(10, -40)
+var default_ball_motion = Vector2(0, -40)
 
 func _ready():
 	is_start = false
