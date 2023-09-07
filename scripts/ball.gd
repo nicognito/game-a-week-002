@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 250
 
 var motion = Vector2.ZERO
-var player_max_bouncing_angle = 31 * PI / 64
+var player_max_bouncing_angle = 15 * PI / 32
 
 func _physics_process(delta):
 	if motion == Vector2.ZERO:
@@ -16,6 +16,8 @@ func _physics_process(delta):
 			var angle_ratio = (collision_info.get_position().x - collider.global_position.x) * 2 / collider.get_collision_shape_width()
 			motion = normal.rotated(player_max_bouncing_angle * angle_ratio)
 		else:
+			if collider is Brick:
+				collider.take_damage()
 			motion = motion.bounce(normal)
 
 func set_motion(new_motion):

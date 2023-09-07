@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djew3mtuvxcyo"]
+
+[ext_resource type="Script" path="res://scripts/brick_green.gd" id="1_dj8tq"]
+[ext_resource type="Texture2D" uid="uid://ccdigtcavp6v5" path="res://assets/Textures/element_green_rectangle_glossy.png" id="1_pmil0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ncl7"]
+size = Vector2(32, 16)
+
+[node name="BrickGreen" type="StaticBody2D"]
+script = ExtResource("1_dj8tq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16.32, 8.16)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("1_pmil0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.32, 8.16)
+shape = SubResource("RectangleShape2D_1ncl7")

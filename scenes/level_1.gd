@@ -4,11 +4,12 @@ extends Node2D
 @onready var ball = $Ball
 
 var is_start = false
-var default_ball_motion = Vector2(0, -40)
+var default_ball_motion = Vector2(10, -50)
 
 func _ready():
 	is_start = false
 	pass
+
 
 func _process(delta):
 	if not is_start:
