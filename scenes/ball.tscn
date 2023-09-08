@@ -8,7 +8,7 @@ radius = 11.0
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 27
 script = ExtResource("1_1hgao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,3 +16,7 @@ texture = ExtResource("1_2gaev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lmjjm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

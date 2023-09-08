@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+signal lost
+
 @export var speed = 250
 
 var motion = Vector2.ZERO
-var player_max_bouncing_angle = 15 * PI / 32
+var player_max_bouncing_angle = 7 * PI / 16
 
 func _physics_process(delta):
 	if motion == Vector2.ZERO:
@@ -22,3 +24,7 @@ func _physics_process(delta):
 
 func set_motion(new_motion):
 	motion = new_motion.normalized()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	lost.emit()
