@@ -4,6 +4,8 @@ signal lost
 
 @export var speed = 250
 
+var sparkle_scene = preload("res://scenes/sparkle.tscn")
+
 var motion = Vector2.ZERO
 var player_max_bouncing_angle = 7 * PI / 16
 var is_active = false :
@@ -24,6 +26,10 @@ func _physics_process(delta):
 			motion = normal.rotated(player_max_bouncing_angle * angle_ratio)
 		else:
 			if collider is Brick:
+				var sparkle = sparkle_scene.instantiate()
+				add_child(sparkle)
+				sparkle.global_position = collision_info.get_position()
+				sparkle.emitting = true
 				collider.take_damage()
 			motion = motion.bounce(normal)
 

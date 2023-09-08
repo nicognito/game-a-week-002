@@ -11,3 +11,5 @@ res://scripts/ball.gd
 res://scenes/layout_1.tscn
 res://scripts/brick.gd
 res://scripts/player.gd
+res://scenes/sparkle.tscn
+res://scripts/sparkle.gd
