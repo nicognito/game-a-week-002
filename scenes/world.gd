@@ -18,8 +18,7 @@ var layouts = [
 
 func _ready():
 	is_start = true
-	ball.is_active = false
-	player.is_active = true
+	reset_player_and_ball()
 	must_move_to_next_level = false
 	layout_index = 0
 	var layout_scene = load(layouts[layout_index])
@@ -42,12 +41,14 @@ func _process(delta):
 
 
 func _on_ball_lost():
+	AudioPlayer.play_sound("dead")
 	player.is_active = false
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2).timeout
 	reset_player_and_ball()
 
 
 func reset_player_and_ball():
+	AudioPlayer.play_sound("start")
 	is_start = true
 	ball.is_active = false
 	player.is_active = true

@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="game-a-week-002"
+config/tags=PackedStringArray("game_a_week")
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AudioPlayer="*res://scenes/audio_player.tscn"
 
 [display]
 

@@ -21,16 +21,21 @@ func _physics_process(delta):
 	if collision_info:
 		var normal = collision_info.get_normal()
 		var collider = collision_info.get_collider()
+		if collider is Player:
+			AudioPlayer.play_sound("player")
 		if collider is Player and normal == Vector2(0, -1):
 			var angle_ratio = (collision_info.get_position().x - collider.global_position.x) * 2 / collider.get_collision_shape_width()
 			motion = normal.rotated(player_max_bouncing_angle * angle_ratio)
 		else:
 			if collider is Brick:
+				AudioPlayer.play_sound("brick")
 				var sparkle = sparkle_scene.instantiate()
 				add_child(sparkle)
 				sparkle.global_position = collision_info.get_position()
 				sparkle.emitting = true
 				collider.take_damage()
+			else:
+				AudioPlayer.play_sound("wall")
 			motion = motion.bounce(normal)
 
 func set_motion(new_motion):
