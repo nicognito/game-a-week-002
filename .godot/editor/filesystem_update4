@@ -9,3 +9,5 @@ res://scenes/world.tscn
 res://scenes/world.gd
 res://scripts/ball.gd
 res://scenes/layout_1.tscn
+res://scripts/brick.gd
+res://scripts/player.gd

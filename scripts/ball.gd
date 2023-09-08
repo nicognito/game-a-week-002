@@ -6,8 +6,13 @@ signal lost
 
 var motion = Vector2.ZERO
 var player_max_bouncing_angle = 7 * PI / 16
+var is_active = false :
+	set(value):
+		is_active = value
 
 func _physics_process(delta):
+	if not is_active:
+		return
 	if motion == Vector2.ZERO:
 		return
 	var collision_info = move_and_collide(motion * speed * delta)
